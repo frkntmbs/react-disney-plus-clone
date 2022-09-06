@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,body {
+    @apply bg-slate-900;
+    font-family: 'Mulish', sans-serif;
+    @apply antialiased
+  }
+}
+
+.header-logo {
+  @apply h-12 mr-8
+}
+
+.nav-items {
+  @apply flex
+}
+
+.nav-items a{
+  @apply text-white flex uppercase font-bold items-center p-5
+}
+
+.nav-items a svg {
+  @apply w-5 h-5 fill-white
+}
+
+.nav-items a > p {
+  @apply my-3 ml-2 text-sm relative after:content-[''] after:absolute after:w-0 after:opacity-0 after:h-[2px] after:bg-white after:left-0 after:bottom-[-6px] after:rounded-full after:transition-all after:duration-300
+}
+
+.nav-items a:hover > p:after {
+  @apply w-full opacity-100
+}
+
+.main-slider {
+  @apply my-5
+}
+
+.main-slider .swiper-slide {
+  @apply container p-[10px] pointer-events-none
+}
+
+.main-slider .swiper-slide-active {
+  @apply pointer-events-auto
+}
+
+.main-slider a .slider-bg-img {
+  @apply w-full rounded-[4px] 
+}
+
+.main-slider .slider-text-img {
+  @apply absolute top-0 left-20 opacity-0 transition-all duration-1000 
+}
+
+.main-slider .swiper-slide-active .slider-text-img {
+  @apply left-0 opacity-100
+}
+
+.main-slider .slider-message-items {
+  @apply absolute left-44 py-10 w-full h-full flex justify-between flex-col opacity-0 transition-all duration-1000 
+}
+
+.main-slider .swiper-slide-active .slider-message-items {
+  @apply left-28 opacity-100
+}
+
+.main-slider a {
+  @apply relative block shadow-lg shadow-black mb-4
+}
+
+.main-slider a:after {
+  @apply absolute content-[""] border-4 border-transparent w-full h-full top-0 rounded-[4px] transition-colors duration-500
+} 
+
+.main-slider a:hover:after {
+  @apply border-white
+}
+
+.main-slider .swiper-button-next, .main-slider .swiper-button-prev {
+  @apply text-white text-sm mx-8 pb-4 opacity-0 transition-opacity duration-500
+}
+
+.main-slider:hover .swiper-button-next, .main-slider:hover .swiper-button-prev {
+  @apply opacity-100
+}
+
+
+.main-slider .swiper-button-next::after, .main-slider .swiper-button-prev::after {
+  @apply text-3xl
+}
+
+.main-slider .swiper-pagination {
+  @apply relative container flex justify-end bottom-11 px-8 !important
+}
+
+.main-slider .swiper-pagination-bullet {
+  @apply w-1.5 h-1.5 mx-2.5 bg-stone-500 opacity-75 !important
+}
+
+.main-slider .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  @apply bg-white !important
+}
